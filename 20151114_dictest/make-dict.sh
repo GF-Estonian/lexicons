@@ -12,14 +12,12 @@
 # If yes, then generate it:
 #   sudo locale-gen et_EE.UTF-8
 
-base=${GF_EST_SRC}/../
+tools=${GF_EST_SRC}/../tools/lexicon/
 
-make_dictest=$base/tools/lexicon/make-dictest.py
-
-tools2=${GF_EST_SRC}/tools/
-estcglex_to_gf=$tools2/estcglex-to-gf.py
-emwv_to_gf=$tools2/emwv-to-gf.py
-wrap_as_gf_module=$tools2/wrap_as_gf_module.py
+make_dictest=$tools/make-dictest.py
+estcglex_to_gf=$tools/estcglex-to-gf.py
+emwv_to_gf=$tools/emwv-to-gf.py
+wrap_as_gf_module=$tools/wrap_as_gf_module.py
 
 data=${GF_EST_SRC}/data/
 grammar=${GF_EST_SRC}/estonian/
@@ -47,3 +45,6 @@ $make_dictest --pos-tags=a | cut -f2,3 | sort | uniq > out_adj.tsv 2> err_adj.tx
 
 # Convert into GF
 cat out_estcglex.tsv out_mwv.tsv out_adv.tsv out_nouns.tsv out_adj.tsv | LC_ALL=et_EE.utf8 sort -k1 | uniq | cut -f2 | $wrap_as_gf_module
+
+echo "Errors:"
+cat err_*.txt
