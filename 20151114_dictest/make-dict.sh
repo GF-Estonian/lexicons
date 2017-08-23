@@ -48,3 +48,6 @@ cat out_estcglex.tsv out_mwv.tsv out_adv.tsv out_nouns.tsv out_adj.tsv | LC_ALL=
 
 echo "Errors:"
 cat err_*.txt
+
+echo "Trying to open the lexicon using GF:"
+gf +RTS -K50M -RTS --retain DictEst.gf
