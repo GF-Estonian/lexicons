@@ -1,0 +1,18 @@
+Est
+./
+Number of lexicon entries:
+90321
+Frequency ranking of oper patterns:
+  36834 mkN (mkN ) 
+  29555 mkN 
+  10197 mkV (mkV ) 
+   3913 mkAdv 
+   3435 mkA (mkN ) 
+   3402 mkV 
+   2155 mkA (mkN (mkN )) 
+    492 mkV2 (mkV ) 
+    320 mkV2 (mkV ) cpartitive 
+     18 mkVV (mkV ) 
+Number of ambiguous opers (should be avoided):
+cat ./DictEst.gf | fgrep = mk | sed s/.* = // | sort | uniq -c | grep -v ^ *1 | wc -l
+1

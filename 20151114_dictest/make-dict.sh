@@ -34,7 +34,6 @@ echo "Multi-word verbs"
 cat $resources/emwv/DB_EMWV_2008.txt | $emwv_to_gf -f $data/abileks.verbs.8forms.csv > out_mwv.tsv 2> err_mwv.txt
 
 echo "Adverbs"
-#cat $resources/kb67a/kb67a-utf8.tix | ./estwn-to-etsyn.bash b | ./adv-to-gf.py > out_adv.tsv
 $make_dictest --pos-tags=b | cut -f2,3 | sort | uniq > out_adv.tsv 2> err_adv.txt
 
 echo "Nouns"
